@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Customer Support - Slice the Percents</title>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --safe-top: env(safe-area-inset-top, 20px);
+            --safe-bottom: env(safe-area-inset-bottom, 20px);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, system-ui; }
+        body {
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            min-height: 100vh;
+            padding: calc(var(--safe-top) + 15px) 20px calc(var(--safe-bottom) + 15px) 20px;
+        }
+
+        .container { width: 100%; max-width: 600px; margin: 0 auto; }
+        
+        .header-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .back-link { color: var(--text-muted); text-decoration: none; font-size: 15px; }
+        h1 { font-size: 24px; font-weight: 800; }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .email-link {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 15px 30px;
+            background: var(--primary);
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 14px;
+            box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
+            transition: transform 0.2s;
+        }
+
+        .email-link:hover {
+            transform: scale(1.03);
+        }
+
+        p { color: var(--text-muted); font-size: 15px; line-height: 1.6; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-bar">
+        <a href="index.html" class="back-link">← Home</a>
+        <h1>App Support</h1>
+    </div>
+
+    <div class="card">
+        <h2 style="font-size: 20px; margin-bottom: 10px;">Have questions or feedback?</h2>
+        <p>I am always fully dedicated to improving user experience and resolving any issues you encounter immediately. If you have app improvement requests, general inquiries, or technical bugs, reach out directly via email:</p>
+        
+        <a href="mailto:morganburke77@icloud.com" class="email-link">morganburke77@icloud.com</a>
+        
+        <p style="font-size: 13px;">Response time: Usually within 24 hours.</p>
+    </div>
+</div>
+
+</body>
+</html>
