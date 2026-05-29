@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>About App - Slice the Percents</title>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --accent: #10b981;
+            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --safe-top: env(safe-area-inset-top, 20px);
+            --safe-bottom: env(safe-area-inset-bottom, 20px);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, system-ui; }
+        body {
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            min-height: 100vh;
+            padding: calc(var(--safe-top) + 15px) 20px calc(var(--safe-bottom) + 15px) 20px;
+        }
+
+        .container { width: 100%; max-width: 600px; margin: 0 auto; }
+        
+        .header-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .back-link { color: var(--text-muted); text-decoration: none; font-size: 15px; }
+        h1 { font-size: 24px; font-weight: 800; }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+
+        h2 { font-size: 18px; font-weight: 700; margin-bottom: 12px; color: #fff; }
+        p { color: var(--text-muted); font-size: 15px; line-height: 1.6; margin-bottom: 15px; }
+        
+        .feature-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-bar">
+        <a href="index.html" class="back-link">← Home</a>
+        <h1>Marketing & Info</h1>
+    </div>
+
+    <div class="card">
+        <h2>App Vision & Value</h2>
+        <p>The main purpose of "Срезай проценты" is to deliver premium utility value to users who handle calculations daily. Built with extreme diligence and a focus on UX, the application offers high accuracy, lightning-fast interactive responsiveness, and beautiful native layouts.</p>
+        <div>
+            <span class="feature-badge">⚡ Instant Processing</span>
+            <span class="feature-badge">🎨 Unique Glass UI</span>
+            <span class="feature-badge">🔒 100% Secure</span>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Developer's Journey & Monetization</h2>
+        <p>As an aspiring and passionate beginner developer, I invest maximum personal effort, time, and heart into refining this software to make it valuable for the global community.</p>
+        <p><strong>Current Status:</strong> The application currently features absolutely no paid mechanics, hidden paywalls, or active subscriptions. It is completely open to explore.</p>
+        <p><strong>Future Roadmap:</strong> In subsequent updates, premium features and advanced algorithmic toolsets will be planned for introduction under reasonable subscriptions. This will help generate sustainable revenue to support continuous enhancement and future innovations.</p>
+    </div>
+</div>
+
+</body>
+</html>
