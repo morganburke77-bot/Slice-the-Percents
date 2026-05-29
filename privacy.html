@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Privacy Policy - Slice the Percents</title>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #0f172a 100%);
+            --card-bg: rgba(255, 255, 255, 0.02);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --safe-top: env(safe-area-inset-top, 24px);
+            --safe-bottom: env(safe-area-inset-bottom, 24px);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, system-ui; }
+        
+        body {
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding: calc(var(--safe-top) + 15px) 20px calc(var(--safe-bottom) + 15px) 20px;
+        }
+
+        .container { width: 100%; max-width: 600px; margin: 0 auto; }
+
+        /* Safe area navigation bar - NO NOTCH CLASH */
+        .header-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .back-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        h1 { font-size: 24px; font-weight: 800; }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        h2 { font-size: 18px; margin: 20px 0 10px 0; color: #fff; }
+        p { color: var(--text-muted); font-size: 15px; margin-bottom: 15px; }
+
+        /* Native App Close Button Inside Webview */
+        .close-webview-btn {
+            width: 100%;
+            background: #ffffff;
+            color: #000000;
+            border: none;
+            padding: 16px;
+            border-radius: 16px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255,255,255,0.1);
+            transition: transform 0.2s;
+            margin-top: 10px;
+        }
+
+        .close-webview-btn:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-bar">
+        <a href="index.html" class="back-link">← Home</a>
+        <h1>Privacy Policy</h1>
+    </div>
+
+    <div class="card">
+        <p><strong>Effective Date: May 29, 2026</strong></p>
+        <p>Your privacy is absolute. This Privacy Policy covers the application "Срезай проценты" (Slice the Percents) created by developer MORGAN BURKE.</p>
+        
+        <h2>1. Data Collection and Storage</h2>
+        <p>We do not collect, store, log, monitor, or capture any personal data, usage analytics, device configuration, or financial numbers entered inside the app. Everything stays locally on your device.</p>
+
+        <h2>2. Third-Party Sharing</h2>
+        <p>Since we do not collect any data, no information is ever shared, sold, or distributed to any third-party services, analytics networks, or companies.</p>
+
+        <h2>3. Local Architecture</h2>
+        <p>All core computational logic runs entirely offline. The app functions flawlessly without remote databases, ensuring complete security for your calculations.</p>
+    </div>
+
+    <button class="close-webview-btn" onclick="closeNativeModal()">Accept & Close</button>
+</div>
+
+<script>
+    function closeNativeModal() {
+        try {
+            // Sends signal to native iOS app webView (WKScriptMessageHandler)
+            if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.closeHandler) {
+                window.webkit.messageHandlers.closeHandler.postMessage("closeWebView");
+            } else {
+                console.log("Not inside the native iOS app environment, redirecting home.");
+                window.location.href = "index.html";
+            }
+        } catch(err) {
+            console.error("Bridge calling error:", err);
+            window.location.href = "index.html";
+        }
+    }
+</script>
+
+</body>
+</html>
